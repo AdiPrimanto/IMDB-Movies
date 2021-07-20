@@ -1,6 +1,6 @@
 $('.search-btn').on('click', function() {
     $.ajax({
-        url: 'http://www.omdbapi.com/?apikey=2fc72f8b&s=' + $('.input-keyword').val(),
+        url: 'https://www.omdbapi.com/?apikey=2fc72f8b&s=' + $('.input-keyword').val(),
         success: result => {
             // console.log(result);
             const movies = result.Search;
@@ -15,7 +15,7 @@ $('.search-btn').on('click', function() {
             $('.modal-detail-btn').on('click', function() {
                 // console.log($(this).data('imdbid'));
                 $.ajax({
-                    url: 'http://www.omdbapi.com/?apikey=2fc72f8b&i=' + $(this).data('imdbid'),
+                    url: 'https://www.omdbapi.com/?apikey=2fc72f8b&i=' + $(this).data('imdbid'),
                     success: m => {
                         const movieDetail = showMovieDetail(m);
                         $('.modal-body').html(movieDetail);
